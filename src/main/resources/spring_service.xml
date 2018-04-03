@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:websocket="http://www.springframework.org/schema/websocket"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.2.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+        http://www.springframework.org/schema/websocket
+        http://www.springframework.org/schema/websocket/spring-websocket-4.2.xsd">
+
+    <!--&lt;!&ndash; websocket消息处理类 &ndash;&gt;-->
+    <!--<bean id="myWebSocketHandler" class="com.xiaoyu.lingdian.handler.MyWebSocketHandler"/>-->
+
+    <!--&lt;!&ndash; 握手接口/拦截器 &ndash;&gt;-->
+    <!--<bean id="handShakeInterceptor" class="com.xiaoyu.lingdian.Interceptor.HandShakeInterceptor"/>-->
+
+    <!--&lt;!&ndash; 浏览器可以使用websocket环境 &ndash;&gt;-->
+    <!--<websocket:handlers>-->
+        <!--&lt;!&ndash; 配置消息处理bean和路径的映射关系 &ndash;&gt;-->
+        <!--<websocket:mapping path="/ws" handler="myWebSocketHandler"/>-->
+        <!--&lt;!&ndash; 配置握手拦截器 &ndash;&gt;-->
+        <!--<websocket:handshake-interceptors>-->
+            <!--<ref bean="handShakeInterceptor"/>-->
+        <!--</websocket:handshake-interceptors>-->
+    <!--</websocket:handlers>-->
+
+    <!--&lt;!&ndash; 浏览器不可以使用websocket环境，则使用sockjs进行模拟连接 &ndash;&gt;-->
+    <!--<websocket:handlers>-->
+        <!--&lt;!&ndash; 配置消息处理bean和路径的映射关系 &ndash;&gt;-->
+        <!--<websocket:mapping path="/ws/sockjs" handler="myWebSocketHandler"/>-->
+        <!--&lt;!&ndash; 配置握手拦截器 &ndash;&gt;-->
+        <!--<websocket:handshake-interceptors>-->
+            <!--<ref bean="handShakeInterceptor"/>-->
+        <!--</websocket:handshake-interceptors>-->
+        <!--&lt;!&ndash; 开启sockjs，去掉则关闭sockjs &ndash;&gt;-->
+        <!--<websocket:sockjs/>-->
+    <!--</websocket:handlers>-->
+
+    <!--&lt;!&ndash; 配置websocket消息的最大缓冲区长度 &ndash;&gt;-->
+    <!--<bean class="org.springframework.web.socket.server.standard.ServletServerContainerFactoryBean">-->
+        <!--<property name="maxTextMessageBufferSize" value="8192"/>-->
+        <!--<property name="maxBinaryMessageBufferSize" value="8192"/>-->
+    <!--</bean>-->
+
+</beans>
